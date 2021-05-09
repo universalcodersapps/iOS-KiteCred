@@ -105,7 +105,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "applicationDidBecomeActive(_:)"
+            landmarkName = "getNotificationSettings()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
