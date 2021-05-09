@@ -74,7 +74,7 @@ class MessageViewController: UIViewController {
                 self.delegate?.backButtonPressed()
             }
         case .none:
-            print("Hello")
+            print("")
         }
     }
     
