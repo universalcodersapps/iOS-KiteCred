@@ -46,6 +46,11 @@
 		F07BC733263158CA00CDCA9A /* NewsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07BC732263158CA00CDCA9A /* NewsLink.swift */; };
 		F07BC73526316F2000CDCA9A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07BC73426316F2000CDCA9A /* Reachability.swift */; };
 		F0AF095226356D1200746AF9 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF095126356D1200746AF9 /* Utility.swift */; };
+		F0E45BC326499DFC0024DD2E /* LanguageSelectionVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45BC226499DFC0024DD2E /* LanguageSelectionVController.swift */; };
+		F0E45BC52649AB060024DD2E /* LanguageTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45BC42649AB060024DD2E /* LanguageTVCell.swift */; };
+		F0E45BCB2649C3950024DD2E /* Language.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E45BCA2649C3940024DD2E /* Language.json */; };
+		F0E45BCD2649C3B20024DD2E /* LanguageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45BCC2649C3B20024DD2E /* LanguageData.swift */; };
+		F0E45BCF2649C3BC0024DD2E /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45BCE2649C3BC0024DD2E /* JsonLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +97,11 @@
 		F07BC732263158CA00CDCA9A /* NewsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsLink.swift; sourceTree = "<group>"; };
 		F07BC73426316F2000CDCA9A /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F0AF095126356D1200746AF9 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		F0E45BC226499DFC0024DD2E /* LanguageSelectionVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionVController.swift; sourceTree = "<group>"; };
+		F0E45BC42649AB060024DD2E /* LanguageTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTVCell.swift; sourceTree = "<group>"; };
+		F0E45BCA2649C3940024DD2E /* Language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Language.json; sourceTree = "<group>"; };
+		F0E45BCC2649C3B20024DD2E /* LanguageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageData.swift; sourceTree = "<group>"; };
+		F0E45BCE2649C3BC0024DD2E /* JsonLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +181,7 @@
 		F02A0FB3262F0F0800449888 /* KiteCred */ = {
 			isa = PBXGroup;
 			children = (
+				F0E45BC1264999520024DD2E /* Language */,
 				F008B1F4263DE18E00857A6A /* Message */,
 				F02A0FEA262F26BA00449888 /* Catagory */,
 				F02A0FD7262F101500449888 /* Network */,
@@ -323,6 +334,18 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		F0E45BC1264999520024DD2E /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				F0E45BCE2649C3BC0024DD2E /* JsonLoader.swift */,
+				F0E45BCC2649C3B20024DD2E /* LanguageData.swift */,
+				F0E45BC226499DFC0024DD2E /* LanguageSelectionVController.swift */,
+				F0E45BC42649AB060024DD2E /* LanguageTVCell.swift */,
+				F0E45BCA2649C3940024DD2E /* Language.json */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,6 +409,7 @@
 				F008B1FC263DE27C00857A6A /* Main.storyboard in Resources */,
 				F00AC5AD263E80A200509FB8 /* SnackbarView.xib in Resources */,
 				F02A0FBF262F0F0900449888 /* LaunchScreen.storyboard in Resources */,
+				F0E45BCB2649C3950024DD2E /* Language.json in Resources */,
 				F02A0FBC262F0F0900449888 /* Assets.xcassets in Resources */,
 				F031B970263F083F001FD354 /* LastCViewCell.xib in Resources */,
 			);
@@ -447,6 +471,7 @@
 				F02A0FE3262F101500449888 /* NetworkManagerProtocol.swift in Sources */,
 				F02A0FE6262F101500449888 /* APIClient.swift in Sources */,
 				F060833A2633FD4900B92659 /* RealmManager.swift in Sources */,
+				F0E45BCF2649C3BC0024DD2E /* JsonLoader.swift in Sources */,
 				F07BC73526316F2000CDCA9A /* Reachability.swift in Sources */,
 				F02A0FE8262F101500449888 /* NetworkConstant.swift in Sources */,
 				F0AF095226356D1200746AF9 /* Utility.swift in Sources */,
@@ -456,6 +481,7 @@
 				F02A1005262F26EE00449888 /* NewsModelView.swift in Sources */,
 				F00AC5AB263E808D00509FB8 /* SnackbarView.swift in Sources */,
 				F07BC7312631589B00CDCA9A /* ItemHandler.swift in Sources */,
+				F0E45BC52649AB060024DD2E /* LanguageTVCell.swift in Sources */,
 				F02A1008262F26EE00449888 /* NewsWebViewController.swift in Sources */,
 				F02A0FB5262F0F0800449888 /* AppDelegate.swift in Sources */,
 				F07BC733263158CA00CDCA9A /* NewsLink.swift in Sources */,
@@ -465,9 +491,11 @@
 				F02A0FE9262F101500449888 /* NetworkError.swift in Sources */,
 				F02A1006262F26EE00449888 /* ArticaleModel.swift in Sources */,
 				F02A100B262F26EE00449888 /* NewsCollectionViewCell.swift in Sources */,
+				F0E45BC326499DFC0024DD2E /* LanguageSelectionVController.swift in Sources */,
 				F02A0FE2262F101500449888 /* APIClientProtocol.swift in Sources */,
 				F008B1FA263DE18E00857A6A /* MessageViewController.swift in Sources */,
 				F008B1F9263DE18E00857A6A /* MessageModel.swift in Sources */,
+				F0E45BCD2649C3B20024DD2E /* LanguageData.swift in Sources */,
 				F02A0FF6262F26BA00449888 /* CategoryRequest.swift in Sources */,
 				F02A0FF4262F26BA00449888 /* CategoryModel.swift in Sources */,
 				F02A100C262F26EE00449888 /* NewsDisplayView.swift in Sources */,
