@@ -11,17 +11,17 @@ import Foundation
 enum NewsArticlesRequest {
     
     // MARK: User actions
-    case newsArticles
-    case articlesWithCategory(_: Int)
+    case newsArticles(_: String)
+    case articlesWithCategory(_: Int, _: String)
 }
 extension NewsArticlesRequest: APIData {
     var path: String {
         switch self {
             
-        case .newsArticles:
-            return "api/v1/news_articles"
-        case .articlesWithCategory(let id):
-            return "api/v1/news_articles?category_ids=\(id)"
+        case .newsArticles(let langCode):
+            return "api/v1/news_articles?language=\(langCode)"
+        case .articlesWithCategory(let id, let langCode):
+            return "api/v1/news_articles?category_ids=\(id)?language=\(langCode)"
         }
     }
     

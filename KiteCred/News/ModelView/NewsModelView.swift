@@ -22,7 +22,11 @@ class NewsModelView {
     var articleList = [ArticaleModel]()
     
     func fetchNewsData() {
-        let apiData = NewsArticlesRequest.newsArticles
+        let defaults = UserDefaults.standard
+        guard let langCode = defaults.string(forKey: "languageCode") else {
+            return
+        }
+        let apiData = NewsArticlesRequest.newsArticles(langCode)
         apiClient.fetch(request: apiData, basePath: NetworkConstant.API.url, success: { (data, result) in
             self.parse(dataResponse: data, isCategory: false)
         }) { (data, result, error) in
@@ -33,7 +37,11 @@ class NewsModelView {
     }
     
     func fetchCategoryNewsDataWith(id: Int) {
-        let apiData = NewsArticlesRequest.articlesWithCategory(id)
+        let defaults = UserDefaults.standard
+        guard let langCode = defaults.string(forKey: "languageCode") else {
+            return
+        }
+        let apiData = NewsArticlesRequest.articlesWithCategory(id, langCode)
         apiClient.fetch(request: apiData, basePath: NetworkConstant.API.url, success: { (data, result) in
             self.parse(dataResponse: data, isCategory: true)
         }) { (data, result, error) in

@@ -273,8 +273,10 @@ extension NewsViewController: NewsModelViewDelegate {
     }
     
     func loadDataFailureWith(message: MessageModel) {
-        Spinner.stop()
-        loadMessageView(message: message)
+        DispatchQueue.main.async {
+            Spinner.stop()
+            self.loadMessageView(message: message)
+        }
     }
     
     func dataLoadSuccessfully() {
