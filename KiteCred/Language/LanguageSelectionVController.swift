@@ -13,6 +13,7 @@ class LanguageSelectionVController: UIViewController {
     @IBOutlet weak var languageNameView: UIView!
     @IBOutlet weak var langTableView: UITableView!
     let languageList = JsonLoader().languageData
+    var selectedLang: LanguageData?
     
     var count: Int {
         return languageList.count
@@ -22,6 +23,21 @@ class LanguageSelectionVController: UIViewController {
         super.viewDidLoad()
         initialSetup()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setGradientBackground()
+    }
+    
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 0.1059, green: 0.1176, blue: 0.2941, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 0.1451, green: 0.2431, blue: 0.3843, alpha: 1.0).cgColor
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(gradientLayer, at:0)
     }
     
     func initialSetup() {
@@ -42,6 +58,17 @@ class LanguageSelectionVController: UIViewController {
         super.viewDidLayoutSubviews()
         langTableView.frame.size.height = 60.0 * CGFloat(count)
         
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: UIButton) {
+        guard let language = selectedLang else {
+            SnackbarView.shared.showAlert(message: NetworkConstant.Snackbar.language, alertType: .hideAction, to: self)
+            return
+        }
+        let defaults = UserDefaults.standard
+        defaults.set(language.code, forKey: "languageCode")
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
 
@@ -65,6 +92,7 @@ extension LanguageSelectionVController: UITableViewDelegate, UITableViewDataSour
         let cell = tableView.cellForRow(at: indexPath) as! LanguageTVCell
         cell.backgroundView?.backgroundColor = .white
         cell.checkMarkImageView.isHidden = false
+        selectedLang = languageList[indexPath.row]
     }
     
     

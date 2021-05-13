@@ -17,7 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.red
+        loadNewsViewController()
         return true
+    }
+    
+    func loadNewsViewController() {
+        let defaults = UserDefaults.standard
+        guard  let _ = defaults.string(forKey: "languageCode") else {
+            return
+        }
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newsViewController : UIViewController = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as UIViewController
+        guard let navigationController = self.window?.rootViewController as? UINavigationController else { return }
+        navigationController.pushViewController(newsViewController, animated: true)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

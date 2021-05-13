@@ -32,6 +32,8 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //setStatus()
+        let defaults = UserDefaults.standard
+        let langCode = defaults.string(forKey: "languageCode")
         loadNewsArticale()
         getArticales()
         newsCollectionView.register(UINib(nibName: "LastCViewCell", bundle: nil), forCellWithReuseIdentifier: "LastCViewCell")

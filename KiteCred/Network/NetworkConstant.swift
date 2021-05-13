@@ -16,5 +16,6 @@ struct NetworkConstant {
     
     struct Snackbar {
         static let offline = "You seems to be offline.\nPlease check your internet connection."
+        static let language = "Please select your primary language"
     }
 }
