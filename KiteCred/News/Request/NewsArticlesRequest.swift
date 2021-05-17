@@ -21,7 +21,7 @@ extension NewsArticlesRequest: APIData {
         case .newsArticles(let langCode):
             return "api/v1/news_articles?language=\(langCode)"
         case .articlesWithCategory(let id, let langCode):
-            return "api/v1/news_articles?category_ids=\(id)?language=\(langCode)"
+            return "api/v1/news_articles?category_ids=\(id)&language=\(langCode)"
         }
     }
     
